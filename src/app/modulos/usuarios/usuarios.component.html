@@ -66,9 +66,15 @@
         <td>{{item.celular}}</td>
         <td>{{item.tipo}}</td>
         <td>
-            Editar
-            -
-            Eliminar
+
+          <a>
+            <span class="fas fa-edit Editar" title="Editar"></span>
+
+          </a>
+            
+            <a (click)="pregunta(item.id usuario, item.nombre)">
+             <span class="fas fa-trash Eliminar" title="Eliminar"></span>
+            </a> 
         </td>
 
       </tr>

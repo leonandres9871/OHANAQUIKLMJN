@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Subscriber } from 'rxjs';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuarios',
@@ -97,13 +99,25 @@ if(this.user.celular == ""){
    consulta() {
      this.suser.consultar().subscribe((result:any) =>{
       this.usuario = result;
-      //console.log(this.cate);
+      console.log(this.usuario);
 
      })
 
    }
 
    ingresar() {
+
+    //console.log(this.cate);
+
+     this.suser.insertar(this.user).subscribe((datos:any) => {
+      if (datos['resultado']=='OK') {
+
+        this.consulta();
+
+     }
+    });
+    this.mostrar(0);
+  
 
     this.validar();
 
@@ -121,8 +135,39 @@ if(this.user.celular == ""){
 
   }
 
-} 
+  pregunta(id: any, nombre: any){
+    console.log("entro con el id " + id);
+    Swal.fire({
+      title: "¿Esta seguro de eliminar el usuario '+ nombre +'?",
+      text: "El proceso no podra ser revertido",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, Eliminar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+         this.borarusuario(id);
+        Swal.fire(
+          "Eliminado",
+          "El usuario a sido eliminado",
+          "success"
+        )
+      }
+    })
+  }
 
+
+
+  borarusuario(id:any){
+   this.suser.eliminar(id).subscribe((datos:any) => {
+    if (datos['resultado']=='OK') {  
+      this.consulta();
+   }
+
+  });
    
+}
 
 
+}
