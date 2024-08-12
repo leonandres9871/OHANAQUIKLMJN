@@ -7,31 +7,31 @@
     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" [routerLink]="['dashboard']">
             <svg class="bi"><use xlink:href="#house-fill"/></svg>
             DASHBOARD
           </a>
         </li>       
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['clientes']">
             <svg class="bi"><use xlink:href="#cart"/></svg>
             CLIENTES
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['categorias']">
             <svg class="bi"><use xlink:href="#people"/></svg>
             CATEGORIAS
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['tipo']">
             <svg class="bi"><use xlink:href="#graph-up"/></svg>
             TIPO
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['productos']">
             <svg class="bi"><use xlink:href="#puzzle"/></svg>
             PRODUCTOS
           </a>
@@ -40,31 +40,31 @@
 
       <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
         <span>GUARDAR REPORTES</span>
-        <a class="link-secondary" href="#" aria-label="Add a new report">
+        <a class="link-secondary"[routerLink]="['guardar reportes']" aria-label="Add a new report">
           <svg class="bi"><use xlink:href="#plus-circle"/></svg>
         </a>
       </h6>
       <ul class="nav flex-column mb-auto">
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['servicios']">
             <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
             SERVICIOS
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['ventas']">
             <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
             VENTAS
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['compras']">
             <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
             COMPRAS
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link "[routerLink]="['inventario']">
             <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
             INVENTARIO
           </a>
@@ -72,7 +72,7 @@
       </ul>
       <ul class="nav flex-column mb-auto">
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <a class="nav-link"[routerLink]="['basededatos']">
             <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
             BASE DE DATOS
           </a>
@@ -80,7 +80,7 @@
 
       <hr class="my-3">
       <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2" href="#">
+        <a class="nav-link" [routerLink]="['usuarios']">
           <svg class="bi"><use xlink:href="#door-closed"/></svg>
           USUARIOS
         </a>

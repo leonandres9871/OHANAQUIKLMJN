@@ -6,24 +6,24 @@ import { Injectable, numberAttribute } from '@angular/core';
 })
 export class UsuarioService {
 
-  url='http:localhost/OHANAQUIKLMJN/src/app/php/usuario'
+  url='http://localhost/ohanaquickljmn/src/app/php/usuario/';
 
-  constructor(private hhttp:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   consultar() {
-    return this.hhttp.get('${this.url}consulta.php')    
+    return this.http.get('${this.url}consulta.php');    
   }
   
   insertar(articulo:any) {
-    return this.hhttp.post('${this.url}insertar.php', JSON.stringify(articulo));    
+    return this.http.post('${this.url}insertar.php', JSON.stringify(articulo));    
   }
 
   eliminar(id:number) {
-    return this.hhttp.get('${this.url}eliminar.php?id=${id}'); 
+    return this.http.get('${this.url}eliminar.php?id=${id}'); 
   }
  
   edit(datos:any) {
-      return this.hhttp.post('${this.url}editar.php', JSON.stringify(datos));    
+      return this.http.post('${this.url}editar.php?id=${id}', JSON.stringify(datos));    
   }
 
 

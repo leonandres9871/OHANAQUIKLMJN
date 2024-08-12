@@ -33,8 +33,6 @@ import { HeaderComponent } from './estructura/header/header.component';
     DashboardComponent,
     LoginComponent,
     ContentComponent,
-    FooterComponent,
-    DashboardComponent,
     CATEGORIASComponent,
     CLIENTESComponent,
     PRODUCTOSComponent,
@@ -43,7 +41,6 @@ import { HeaderComponent } from './estructura/header/header.component';
     VENTASComponent,
     COMPRASComponent,
     usuariosComponent,
-    PrincipalComponent,
     TipoComponent,
     HeaderComponent,
   

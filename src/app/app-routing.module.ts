@@ -1,33 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
-import { PrincipalComponent } from './modulos/principal.component';
 import { DashboardComponent } from './modulos/dashboard/dashboard.component';
-import { usuariosComponent } from './modulos/usuarios/usuarios.component';
 import { LoginComponent } from './modulos/login/login.component';
-
-
-
+import { PrincipalComponent } from './modulos/principal.component';
+import { usuariosComponent } from './modulos/usuarios/usuarios.component';
+import { validaruserGuard } from './guards/validaruser.guard';
 
 const routes: Routes = [
   {
-    path: '', component:PrincipalComponent,
-      children:[
-        { path: 'dashboard', component: DashboardComponent},
-        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-        { path: 'usuarios', component: usuariosComponent},
-        
-      ]
-  },
-   { path: 'login', component: LoginComponent}
-     ]; 
+  path: '', component: PrincipalComponent,
+  children:
+  [
+    {path: 'dashboard', component: DashboardComponent,      canActivate: [validaruserGuard]},
+    {path: 'usuario', component: usuariosComponent,         canActivate: [validaruserGuard]},
+    {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
+  ]
+},
 
-// const routes: Routes = [];
+{path: 'login', component: LoginComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-
 })
 export class AppRoutingModule { }

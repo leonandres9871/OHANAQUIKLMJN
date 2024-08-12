@@ -12,6 +12,7 @@ export class usuariosComponent {
 
   verf = false;
   usuario: any;
+  iduser: any;
   user = {
     nombre: "",
     usuario: "",
@@ -28,6 +29,7 @@ export class usuariosComponent {
    valididentificacion = true;
    validclave = true;
    validcelular = true;
+   beditar = false;
 
    constructor(private suser:UsuarioService) {}
 
@@ -35,10 +37,13 @@ export class usuariosComponent {
      this.consulta();
      this.limpiar()
    }
-    mostrar(dato:any){
+    mostrar(dato:any) {
       switch(dato){
         case 0:
          this.verf = false;
+         this.beditar= false;
+         this.iduser = "";
+         this.limpiar();
          break;
          case 1:
           this.verf = true;
@@ -99,7 +104,7 @@ if(this.user.celular == ""){
    consulta() {
      this.suser.consultar().subscribe((result:any) =>{
       this.usuario = result;
-      console.log(this.usuario);
+      //console.log(this.usuario); 
 
      })
 
@@ -167,6 +172,48 @@ if(this.user.celular == ""){
 
   });
    
+}
+
+cargardatos(datos:any, id:number){
+ this.user.nombre = datos.nombre;
+ this.user.usuario = datos.usuario
+ this.user.clave = datos.clave;
+ this.user.identificacion = datos.identificacion;
+ this.user.celular = datos.celular;
+ this.user.tipo = datos.tipo;
+ this.iduser = id;
+ this.mostrar(1);
+ this.beditar=true;
+
+
+}
+
+editar(){
+   //console.log(this.cate);
+
+   this.suser.insertar(this.user).subscribe((datos:any) => {
+    if (datos['resultado']=='OK') {
+
+      this.consulta();
+
+   }
+  });
+  this.mostrar(0);
+
+
+  this.validar();
+
+  if(this.validnombre==true && this.validusuario==true && this.valididentificacion==true && this.validclave==true && this.validtipo==true && this.validcelular==true){
+  this.suser.edit(this.iduser).subscribe((datos:any) => {
+   if (datos['resultado']=='OK') {
+
+      this.consulta();
+   }
+  });
+   this.mostrar(0);
+  
+
+  }
 }
 
 
