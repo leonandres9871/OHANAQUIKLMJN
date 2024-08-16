@@ -4,15 +4,14 @@ import { DashboardComponent } from './modulos/dashboard/dashboard.component';
 import { LoginComponent } from './modulos/login/login.component';
 import { PrincipalComponent } from './modulos/principal.component';
 import { usuariosComponent } from './modulos/usuarios/usuarios.component';
-import { validaruserGuard } from './guards/validaruser.guard';
 
 const routes: Routes = [
   {
   path: '', component: PrincipalComponent,
   children:
   [
-    {path: 'dashboard', component: DashboardComponent,      canActivate: [validaruserGuard]},
-    {path: 'usuario', component: usuariosComponent,         canActivate: [validaruserGuard]},
+    {path: 'dashboard', component: DashboardComponent},      
+    {path: 'usuario', component: usuariosComponent},         
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
   ]
 },

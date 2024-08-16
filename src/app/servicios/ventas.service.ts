@@ -6,23 +6,23 @@ import { Injectable } from '@angular/core';
 })
 export class VentasService {
 
-  url='http:localhost/OHANAQUIKLMJN/src/app/php/ventas'
+  url=`http:localhost/OHANAQUIKLMJN/src/app/php/ventas`
 
   constructor(private hhttp:HttpClient) { }
 
   consultar() {
-    return this.hhttp.get('${this.url}consulta.php')    
+    return this.hhttp.get(`${this.url}consulta.php`)    
   }
   
   insertar(articulo:any) {
-    return this.hhttp.post('${this.url}insertar.php', JSON.stringify(articulo));    
+    return this.hhttp.post(`${this.url}insertar.php`, JSON.stringify(articulo));    
   }
 
   eliminar(id:number) {
-    return this.hhttp.get('${this.url}eliminar.php?id=${id}'); 
+    return this.hhttp.get(`${this.url}eliminar.php?id=${id}`); 
   }
  
   edit(datos:any) {
-      return this.hhttp.post('${this.url}editar.php', JSON.stringify(datos));    
+      return this.hhttp.post(`${this.url}editar.php`, JSON.stringify(datos));    
   }
 }
