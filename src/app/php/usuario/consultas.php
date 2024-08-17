@@ -1,6 +1,6 @@
 <?php
  header('Access-control-allow-origin: *');
- header("Access-control-allow-headers: origin, x-requested-with, Content-type, Aceept");
+ header("Access-control-allow-headers: origin, x-requested-with, Content-Type, Aceept");
 
  require("../conexion.php");
 
@@ -15,5 +15,5 @@
  }
 $cad=json_encode($vec);
 echo $cad;
-header('Content-type: application/json');
+header('Content-Type: application/json');
 

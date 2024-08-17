@@ -9,11 +9,11 @@
  require("../conexion.php");
 
 $editar = "UPDATE usuario SET nombre= '$params->nombre',usuario= '$params->usuario', clave=sha1('$params->clave'), 
-identificacion='$params->identificacion , celulra='$params->celular , email='$params->email' WHERE id_usuario=$params->id_usuario";
+tipo='$params->tipo' WHERE id_usuario=$params->id_usuario";
  
 
 
- mysqli_query($conexion,$editar) or die('no inserto');
+ mysqli_query($conexion,$editar) or die('no edito');
 
 
  class Result {}

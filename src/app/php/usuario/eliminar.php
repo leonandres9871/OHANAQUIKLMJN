@@ -15,7 +15,7 @@
  $response->resultado = 'OK';
  $response->mensaje = 'usuario borrado';
 
- header('Content-type: application/json');
+ header('Content-Type: application/json');
  echo json_encode($response);
 
- ?>
+ 

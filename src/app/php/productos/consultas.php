@@ -4,7 +4,7 @@
 
  require("../conexion.php");
 
- $con = "SELECT * from producto ORDER BY nombre";
+ $con = "SELECT * from productos ORDER BY nombre";
  $res=mysqli_query($conexion,$con) or die('no consulto producto');
 
  $vec=[];
@@ -16,4 +16,4 @@
 $cad=json_encode($vec);
 echo $cad;
 header('Content-type: application/json');
-?>
+
