@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class ComprasService {
 
-  url='http:localhost/OHANAQUIKLMJN/src/app/php/cliente'
+  url='https://localhost/ohanaquicklmjn/php/copras/';
 
 
   constructor(private hhttp:HttpClient) { }
 
   consultar() {
-    return this.hhttp.get(`${this.url}consulta.php`)    
+    return this.hhttp.get(`${this.url}consultas.php`)    
   }
   
   insertar(articulo:any) {

@@ -5,7 +5,7 @@
  require("../conexion.php");
 
 
- $del = "DELETE FROM usuario WHERE id_usuario=" .$_GET['id'];
+ $del = "DELETE FROM usuarios WHERE id_usuario=" .$_GET['id'];
  mysqli_query($conexion,$del) or die("no elimino");
 
  class Result {}

@@ -8,7 +8,7 @@ import { Injectable} from '@angular/core';
 })
 export class LoginService {
 
-  url='http://localhost/ohanaquicklmjn/src/app/php/login/';
+  url='https://localhost/ohanaquicklmjn/php/login/';
 
   constructor(private http:HttpClient) { }
 

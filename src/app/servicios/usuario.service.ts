@@ -6,12 +6,12 @@ import { Injectable, numberAttribute } from '@angular/core';
 })
 export class UsuarioService {
 
-  url='http://localhost/ohanaquickljmn/src/app/php/usuario/';
+  url='https://localhost/ohanaquicklmjn/php/usuarios/';
 
   constructor(private http:HttpClient) { }
 
   consultar() {
-    return this.http.get(`${this.url}consulta.php`);    
+    return this.http.get(`${this.url}consultas.php`);    
   }
   
   insertar(articulo:any) {
@@ -22,8 +22,8 @@ export class UsuarioService {
     return this.http.get(`${this.url}eliminar.php?id=${id}`); 
   }
  
-  edit(datos:any) {
-      return this.http.post(`${this.url}editar.php?id`, JSON.stringify(datos));    
+  edit(datos:any, id:number) {
+      return this.http.post(`${this.url}editar.php?id=${id}`, JSON.stringify(datos));    
   }
 
 

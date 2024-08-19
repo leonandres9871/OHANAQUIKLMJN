@@ -6,14 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class CategoriaService {
 
-  url='http:localhost/OHANAQUIKLMJN/src/app/php/categoria'
+  url='https://localhost/ohanaquicklmjn/php/categorias/';
+
 
 
 
   constructor(private hhttp:HttpClient) { }
 
   consultar() {
-    return this.hhttp.get(`${this.url}consulta.php`)    
+    return this.hhttp.get(`${this.url}consultas.php`)    
   }
   
   insertar(articulo:any) {

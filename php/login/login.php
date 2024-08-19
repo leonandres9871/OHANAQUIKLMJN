@@ -5,9 +5,9 @@
     $user = $_GET["user"];
     $cla = $_GET['clave'];
 
-    require("../conexion.php");
+    require "../conexion.php";
 
-    $con = "SELECT * from usuario WHERE usuario='$user' AND clave=sha1('$cla')";
+    $con = "SELECT * from usuarios WHERE usuario='$user' AND clave=sha1('$cla')";
     $res=mysqli_query($conexion,$con) or die('no consulto el usuario');
 
 

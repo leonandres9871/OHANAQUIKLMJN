@@ -6,13 +6,16 @@
 
  $params = json_decode($jason);
 
- require("../conexion.php");
+ require "../conexion.php";
 
-$editar = "UPDATE usuario SET nombre= '$params->nombre',usuario= '$params->usuario', clave=sha1('$params->clave'), 
-tipo='$params->tipo' WHERE id_usuario=$params->id_usuario";
+ $editar = "UPDATE clientes SET nombre= '$params->nombre',basededatos= '$params->basededatos' , servicios='$params->servicios', 
+ productos='$params->productos , valor_venta='$params->valor_venta , proveedor='$params->proveedor , marca='$params->marca' , 
+ valor_compra='$params->valor_compra' , 
+ WHERE id_clientes=$params->id_categoria";
+
+
  
-
-
+ 
  mysqli_query($conexion,$editar) or die('no edito');
 
 
@@ -20,7 +23,7 @@ tipo='$params->tipo' WHERE id_usuario=$params->id_usuario";
 
  $response = new Result();
  $response->resultado = 'OK';
- $response->mensaje = 'datos grabados';
+ $response->mensaje = 'datos modificados';
 
  header('Content-type: application/json');
  echo json_encode($response);

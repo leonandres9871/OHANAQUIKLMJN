@@ -6,13 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class BasededatosService {
 
-  url='http:localhost/OHANAQUIKLMJN/src/app/php/basededatos'
+  url='https://localhost/ohanaquicklmjn/php/basededatos/';
+
 
 
   constructor(private hhttp:HttpClient) { }
 
   consultar() {
-    return this.hhttp.get(`${this.url}consulta.php`)    
+    return this.hhttp.get(`${this.url}consultas.php`)    
   }
   
   insertar(articulo:any) {

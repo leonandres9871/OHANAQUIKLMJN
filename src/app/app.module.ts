@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './estructura/nav/nav.component';
-import { ContentComponent } from './estructura/content/content.component';
 import { FooterComponent } from './estructura/footer/footer.component';
 import { PrincipalComponent } from './modulos/principal.component';
 import { DashboardComponent } from './modulos/dashboard/dashboard.component';
@@ -32,7 +31,6 @@ import { HeaderComponent } from './estructura/header/header.component';
     PrincipalComponent,
     DashboardComponent,
     LoginComponent,
-    ContentComponent,
     CATEGORIASComponent,
     CLIENTESComponent,
     PRODUCTOSComponent,

@@ -6,12 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class CiudadService {
 
-   url='http:localhost/OHANAQUIKLMJN/src/app/php/ciudad'
+   url='https://localhost/ohanaquicklmjn/php/ciudad/';
+
 
   constructor(private hhttp:HttpClient) { }
 
   consultar() {
-    return this.hhttp.get(`${this.url}consulta.php`)    
+    return this.hhttp.get(`${this.url}consultas.php`)    
   }
   
   insertar(articulo:any) {
